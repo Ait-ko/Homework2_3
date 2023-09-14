@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitException {
         BankAccount bankAccount = new BankAccount(0.0);
 
         bankAccount.deposit(15000.0);
@@ -13,7 +13,9 @@ public class Main {
             } catch (LimitException e) {
                 double remainingAmount = e.getRemainingAmount();
                 System.out.println("Ошибка: " + e.getMessage() + ". Снимаем доступную сумму: " + remainingAmount);
-            }break;
+                bankAccount.withdraw(remainingAmount);
+                break;}
+
 
 
         }
