@@ -13,9 +13,9 @@ public class Main {
             } catch (LimitException e) {
                 double remainingAmount = e.getRemainingAmount();
                 System.out.println("Ошибка: " + e.getMessage() + ". Снимаем доступную сумму: " + remainingAmount);
-                break;
+            }break;
 
-            }
+
         }
 
     }}
